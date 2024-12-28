@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Login</title>
+  <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="page">
+    <div class="background">
+      <div class="overlay"></div>
+    </div>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="logo-section">
+          <h1>Welcome Back!</h1>
+          <p>Log in to your shopping account</p>
+        </div>
+        <form id="login-form">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="options">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+            <a href="#" id="forgot-password">Forgot password?</a>
+          </div>
+          <button type="submit" class="login-btn">Log In</button>
+        </form>
+        <p class="signup-text">Don't have an account? <a href="#" id="sign-up">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Page -->
+  <div id="forgot-password-page" class="page">
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Forgot Password</h2>
+        <p>Please enter your email to reset your password</p>
+        <form id="forgot-password-form">
+          <div class="input-group">
+            <label for="reset-email">Email</label>
+            <input type="email" id="reset-email" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="reset-btn">Reset Password</button>
+        </form>
+        <p><a href="#" id="back-to-login">Back to Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Page -->
+<div id="sign-up-page" class="page">
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Sign Up</h2>
+        <form id="sign-up-form">
+          <div class="input-group">
+            <label for="sign-up-name">Full Name</label>
+            <input type="text" id="sign-up-name" placeholder="Enter your full name" required>
+          </div>
+          <div class="input-group">
+            <label for="sign-up-phone">Phone Number</label>
+            <input type="tel" id="sign-up-phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="input-group">
+            <label for="sign-up-email">Email</label>
+            <input type="email" id="sign-up-email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label for="sign-up-password">Password</label>
+            <input type="password" id="sign-up-password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-group">
+            <label for="sign-up-confirm-password">Confirm Password</label>
+            <input type="password" id="sign-up-confirm-password" placeholder="Confirm your password" required>
+          </div>
+          <button type="submit" class="sign-up-btn">Sign Up</button>
+        </form>
+        <p><a href="#" id="back-to-login-sign-up">Back to Login</a></p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Home Page (after login) -->
+  <div id="home-page" class="page">
+    <div class="home-container">
+      <h1>Welcome to the Shopping Site!</h1>
+      <p>You have successfully logged in.</p>
+      <button onclick="logout()">Log Out</button>
+    </div>
+  </div>
+
+  <script src="../scripts/script.js"></script>
+</body>
+</html>
