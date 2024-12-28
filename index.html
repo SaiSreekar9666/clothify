@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css"> 
+</head>
+<body>
+    <header>
+        <div class="logo">Clothify</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for T-shirts, dresses, and more...">
+        </div>
+            <div class="actions">
+                <button onclick="viewCart()">Cart</button>
+                <button onclick="getLocation()">GPS</button>
+                <button onclick="navigateTo('login.html')">Login</button>
+                <button onclick="navigateTo('signup.html')">Signup</button>
+            </div>
+        </header>
+        
+    <div class="banner">
+        <span>Discover Your Style with Clothify</span>
+    </div>
+
+
+    <section class="categories">
+        
+        <div class="category-card">
+            <a href="../views/mens.html">
+            <img src="https://st.depositphotos.com/1016231/4630/i/450/depositphotos_46309733-stock-photo-three-young-male-fashion-metraseksuals.jpg?text=Men's+Wear" alt="Men's Wear">
+            <div class="category-name">Men's Wear</div></a>
+        </div>
+        <div class="category-card">
+            <img src="https://img.freepik.com/free-photo/studio-shot-pretty-black-woman-with-white-shopping-bag-standing-yellow-background-trendy-spring-fashionable-look_273443-10.jpg?text=Women's+Wear" alt="Women's Wear">
+            <div class="category-name">Women's Wear</div>
+        </div>
+        <div class="category-card">
+            <img src="https://c8.alamy.com/comp/R0TARA/group-portrait-of-two-cute-adorable-preschool-children-going-shopping-caucasian-little-girl-and-boy-running-in-mall-kids-holding-shopping-bags-blac-R0TARA.jpg?text=Kids'+Wear" alt="Kids' Wear">
+            <div class="category-name">Kids' Wear</div>
+        </div>
+        <div class="category-card">
+            <img src="https://image.shutterstock.com/z/stock-photo-fashionable-male-and-female-accessories-on-beige-background-flat-lay-space-for-text-2008428230.jpg?text=Accessories" alt="Accessories">
+            <div class="category-name">Accessories</div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <div class="info">
+                <h4>Stylish Jacket</h4>
+                <p class="price">$59.99</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <div class="info">
+                <h4>Casual T-Shirt</h4>
+                <p class="price">$19.99</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <div class="info">
+                <h4>Elegant Dress</h4>
+                <p class="price">$89.99</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mens-designer-shoes-1534528103.gif?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="Product">
+            <div class="info">
+                <h4>Trendy Sneakers</h4>
+                <p class="price">$49.99</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="store-list">
+        <h3>Nearby Stores</h3>
+        <div class="store-item">Store 1 - 2.5 km away</div>
+        <div class="store-item">Store 2 - 3.1 km away</div>
+        <div class="store-item">Store 3 - 4.7 km away</div>
+    </section>
+
+    <footer>
+        &copy; 2024 Clothify. All Rights Reserved.
+    </footer>
+    <script src="../scripts/index.js"></script>
+</body>
+</html>
