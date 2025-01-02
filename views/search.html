@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Clothify</div>
+    </header>
+    <main>
+        <h1>Search Results</h1>
+        <div id="results"></div>
+    </main>
+    <footer>
+        &copy; 2024 Clothify. All Rights Reserved.
+    </footer>
+    <script>
+        // Get the query parameter from the URL
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("query");
+
+        // Display the search term
+        const resultsDiv = document.getElementById("results");
+        if (query) {
+            resultsDiv.innerHTML = `<p>You searched for: <strong>${query}</strong></p>`;
+            // Here, you can implement logic to fetch and display search results
+        } else {
+            resultsDiv.innerHTML = "<p>No search term provided.</p>";
+        }
+    </script>
+    <script src="../scripts/index.js"></script>
+
+</body>
+</html>

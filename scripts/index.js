@@ -65,3 +65,14 @@ function viewCart() {
 function closeCart() {
     document.getElementById('cart-modal').style.display = 'none';
 }
+function handleSearch(event) {
+    event.preventDefault(); // Prevent form from submitting traditionally
+    const searchInput = document.getElementById("search-input").value.trim();
+
+    if (searchInput) {
+        // Redirect to the search results page with the search term as a query parameter
+        window.location.href = `../views/search.html?query=${encodeURIComponent(searchInput)}`;
+    } else {
+        alert("Please enter a search term!");
+    }
+}

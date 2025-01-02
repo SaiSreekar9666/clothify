@@ -1,26 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Wear - Clothify</title>
-    <link rel="stylesheet" href="../styles/mens.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Wear</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #1e3a8a, #1f2937);
+      color: #f3f4f6;
+      animation: backgroundFade 10s infinite alternate;
+    }
+
+    @keyframes backgroundFade {
+      0% { background: linear-gradient(120deg, #1e3a8a, #1f2937); }
+      100% { background: linear-gradient(120deg, #1f2937, #1e3a8a); }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0f172a;
+      color: #f3f4f6;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: headerAnimation 6s infinite alternate;
+    }
+
+    @keyframes headerAnimation {
+      0% { background-color: #0f172a; color: #f3f4f6; }
+      50% { background-color: #1e3a8a; color: #f43f5e; }
+      100% { background-color: #f43f5e; color: #0f172a; }
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: cardFade 8s infinite alternate;
+    }
+
+    @keyframes cardFade {
+      0% { box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); }
+      50% { box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); transform: translateY(-5px); }
+      100% { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); transform: translateY(-10px); }
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+      color: #1f2937;
+    }
+
+    .card-content p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-content .price {
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin: 0.5rem 0;
+    }
+
+    .card-content .discount {
+      color: #f43f5e;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background-color: #1e3a8a;
+      color: white;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #f43f5e;
+      transform: scale(1.1);
+    }
+    footer {
+        background-color: #0f172a;
+        color: #f3f4f6;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+        animation: footerAnimation 10s infinite alternate, textColorAnimation 10s infinite alternate;
+      }
+      
+      @keyframes footerAnimation {
+        0% { background-color: #0f172a; }
+        25% { background-color: #1e3a8a; }
+        50% { background-color: #f43f5e; }
+        75% { background-color: #0f172a; }
+        100% { background-color: #1e3a8a; }
+      }
+      
+      @keyframes textColorAnimation {
+        0% { color: #f3f4f6; }
+        25% { color: #f43f5e; }
+        50% { color: #1e3a8a; }
+        75% { color: #f3f4f6; }
+        100% { color: #f43f5e; }
+      }
+      
+      footer p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+      
+
+      
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Clothify</div>
-    </header>
+  <header>Men's Collection</header>
 
-    <main>
-        <h1>Men's Wear</h1>
-        <div id="products">
-            <!-- Products will be dynamically inserted here -->
-        </div>
-    </main>
+  <div class="grid-container">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/769749/pexels-photo-769749.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shirts">
+      <div class="card-content">
+        <h3>Shirts</h3>
+        <p>Slim-fit Casual-Shirts, perfect for out-wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
 
-    <footer>
-        &copy; 2024 Clothify. All Rights Reserved.
-    </footer>
-    <script src="../scripts/mens.js"></script>
+    <div class="card">
+      <img src="https://www.thefashionisto.com/wp-content/uploads/2021/03/Mens-Denim-Look.jpg" alt="Jeans">
+      <div class="card-content">
+        <h3>Jeans</h3>
+        <p>Slim-fit formal trousers, perfect for office wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/8a/16/fe/8a16feeca939f6fdc9d5bb74442b0b19.jpg" alt="Formal Shirts">
+      <div class="card-content">
+        <h3>Formal Shirts</h3>
+        <p>Slim-fit formal trousers, perfect for office wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://primedia.primark.com/i/primark/tn-coats-1000x1000" alt="Trousers">
+      <div class="card-content">
+        <h3>Outer Wears</h3>
+        <p>Blazers,Jackets,Sweaters</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/9c/30/2e/9c302e591fb5b4a6852abc8e98e796f5.jpg" alt="OverSize T-Shirt">
+      <div class="card-content">
+        <h3>OverSize T-Shirt</h3>
+        <p>Trendy graphic t-shirt with vibrant prints and soft fabric.</p>
+        <div class="price">$15.99 <span class="discount">20% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://ae01.alicdn.com/kf/HTB1rmT_SFXXXXbbXFXXq6xXFXXXZ/Jbersee-Mens-Black-Dress-Pants-Formal-Pants-Slim-Fit-Wedding-Men-Black-Suit-Pants-Business-Office.jpg" alt="Formal Pants">
+      <div class="card-content">
+        <h3>Formal Pants</h3>
+        <p>Slim-fit formal trousers, perfect for office wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <<button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61Q+oTHo0EL._AC_UL480_FMwebp_QL65_.jpg" alt="Cargos">
+      <div class="card-content">
+        <h3>Cargos</h3>
+        <p>Slim-fit formal trousers, perfect for office wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://media.gqindia.com/wp-content/uploads/2011/11/04.jpg" alt="Ethinc ear">
+      <div class="card-content">
+        <h3>Ethic Wear</h3>
+        <p>Slim-fit formal trousers, perfect for office wear.</p>
+        <div class="price">$40.00 <span class="discount">10% Off</span></div>
+        <button class="button">
+            <a href="../views/shirts.html" style="color: white; text-decoration: none;">Explore more</a>
+          </button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <p>SomeWhere on Earth</p>
+    <p>National</p>
+    <p>Phone: +91 4884844848</p>
+    <p>Email: gsr@gmail.com</p>
+    <p>&copy; June-2024. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

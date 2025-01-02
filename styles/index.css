@@ -54,12 +54,12 @@ header input {
 }
 
 .banner { 
-    background: url('https://c8.alamy.com/comp/R6PKEX/happy-family-with-shopping-bags-goes-shopping-while-shopping-R6PKEX.jpg') no-repeat center center/cover; 
+    background: url('https://vux.world/wp-content/uploads/AI-in-retail-use-case-article-image.png') no-repeat center center/cover; 
     height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+    color:yellow;
     font-size: 5rem;
     font-weight: bold;
     position: relative;
@@ -303,4 +303,53 @@ footer {
     .product-card .info h4 {
         font-size: 0.9em;
     }
+    .category-name{
+        text-decoration: none;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+/* Search bar with icon styling */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #888;
+}
+
+/* Category card styling */
+.category-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-card a:hover {
+    text-decoration: none;
+}
+
+/* Center text in category cards */
+.category-name {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
 }
