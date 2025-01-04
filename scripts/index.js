@@ -76,3 +76,68 @@ function handleSearch(event) {
         alert("Please enter a search term!");
     }
 }
+// Handle dynamic header update
+function updateHeader(user) {
+    const actionsContainer = document.getElementById('user-actions');
+    actionsContainer.innerHTML = `
+        <div class="user-profile">
+            <img src="../images/default-avatar.png" alt="User Avatar" class="user-avatar">
+            <span class="user-name">${user.name}</span>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <button onclick="getLocation()">GPS</button>
+    `;
+}
+
+// Simulate user login
+function loginUser(email) {
+    const userName = email.split('@')[0]; // Use part of the email as name
+    updateHeader({ name: userName });
+}
+
+// Handle logout
+function logout() {
+    // Clear user profile
+    const actionsContainer = document.getElementById('user-actions');
+    actionsContainer.innerHTML = `
+        <button onclick="navigateTo('../views/login.html')">Login</button>
+        <button onclick="navigateTo('../views/signup.html')">Signup</button>
+    `;
+}
+
+// Handle search functionality
+function performSearch() {
+    const query = document.getElementById('search-input').value.trim();
+    if (query) {
+        alert(`Searching for "${query}"...`);
+        // Implement actual search logic here (e.g., filter products or send a request)
+    } else {
+        alert('Please enter a search query.');
+    }
+}
+
+// Handle GPS functionality
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                alert(`Your location: Latitude ${latitude}, Longitude ${longitude}`);
+                // Optionally, fetch nearby stores based on the location
+            },
+            (error) => {
+                alert('Unable to fetch location. Please enable GPS.');
+            }
+        );
+    } else {
+        alert('Geolocation is not supported by this browser.');
+    }
+}
+
+// Example: Simulate login on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = true; // Replace with actual login check
+    if (isLoggedIn) {
+        loginUser('example@clothify.com'); // Replace with actual user data
+    }
+});

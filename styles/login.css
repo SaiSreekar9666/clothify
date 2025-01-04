@@ -200,4 +200,34 @@
   button.sign-up-btn:hover {
     background-color: #0056b3;
   }
+  header#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header#main-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  #user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #user-profile.hidden {
+    display: none;
+  }
+  
+  #user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Clothify</div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for T-shirts, dresses, and more...">
+            <button id="search-btn">&#128269;</button>
+        </div>
+        <div class="actions">
+            <button onclick="viewCart()">Cart</button>
+            <div id="user-profile">
+                <img src="../images/default-profile.png" alt="User Profile" class="profile-pic">
+                <span id="user-name"></span>
+                <div class="dropdown hidden">
+                    <button onclick="viewProfile()">My Profile</button>
+                    <button onclick="viewOrders()">My Orders</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <span>Discover Your Style with Clothify</span>
+    </div>
+
+    <section id="search-results" class="hidden">
+        <h2>Search Results</h2>
+        <div class="results"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 Clothify. All Rights Reserved.
+    </footer>
+
+    <script src="../scripts/index.js"></script>
+</body>
+</html>

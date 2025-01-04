@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .actions button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+header .actions button:hover {
+    background-color: #ff5045;
+}
+
+.search-results-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.search-results-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.result-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.result-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.result-item .info {
+    padding: 10px;
+    text-align: center;
+}
+
+.result-item .info h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.result-item .info .price {
+    font-size: 16px;
+    color: #ff6f61;
+    font-weight: bold;
+}

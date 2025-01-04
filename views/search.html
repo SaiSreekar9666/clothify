@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,5 +33,37 @@
     </script>
     <script src="../scripts/index.js"></script>
 
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/search.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Clothify</div>
+        <div class="actions">
+            <button onclick="navigateTo()">Home</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="search-results-container">
+        <h2>Search Results for "<span id="search-query"></span>"</h2>
+        <div class="results">
+            <!-- Search result items will be dynamically populated here -->
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Clothify. All Rights Reserved.
+    </footer>
+
+    <script src="../scripts/search.js"></script>
 </body>
 </html>

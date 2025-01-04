@@ -78,4 +78,63 @@ document.getElementById('sign-up-form').addEventListener('submit', function (eve
     document.getElementById('sign-up-page').classList.remove('active');
     document.getElementById('login-page').classList.add('active');
   });
+  // Elements
+const loginPage = document.getElementById('login-page');
+const homePage = document.getElementById('home-page');
+const mainHeader = document.getElementById('main-header');
+const userProfile = document.getElementById('user-profile');
+const userNameElement = document.getElementById('user-name');
+const userAvatar = document.getElementById('user-avatar');
+
+// Dummy user data
+const dummyUser = {
+  name: 'John Doe',
+  email: 'johndoe@example.com',
+  avatar: '../images/default-avatar.png',
+  password: 'saisreekar'
+};
+
+// Handle login
+document.getElementById('login-form').addEventListener('submit', function (e) {
+  e.preventDefault();
   
+  // Simulate login
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Check email and password (you can replace this with actual validation)
+  if (email === dummyUser.email && password === 'password') {
+    // Display user profile in header
+    userNameElement.textContent = dummyUser.name;
+    userAvatar.src = dummyUser.avatar;
+    userProfile.classList.remove('hidden');
+
+    // Navigate to home page
+    loginPage.style.display = 'none';
+    homePage.style.display = 'block';
+    mainHeader.style.display = 'flex';
+  } else {
+    alert('Invalid email or password.');
+  }
+});
+
+// Handle logout
+function logout() {
+  // Hide user profile
+  userProfile.classList.add('hidden');
+
+  // Navigate back to login page
+  homePage.style.display = 'none';
+  loginPage.style.display = 'block';
+  mainHeader.style.display = 'none';
+}
+
+// Initialize
+function init() {
+  // Show login page by default
+  loginPage.style.display = 'block';
+  homePage.style.display = 'none';
+  mainHeader.style.display = 'none';
+}
+
+init();
