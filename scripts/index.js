@@ -88,6 +88,11 @@ function updateHeader(user) {
         <button onclick="getLocation()">GPS</button>
     `;
 }
+// Redirect to profile page
+function navigateToProfile() {
+    window.location.href = "../views/profile.html"; // Redirect to profile.html
+}
+
 
 // Simulate user login
 function loginUser(email) {
@@ -105,16 +110,6 @@ function logout() {
     `;
 }
 
-// Handle search functionality
-function performSearch() {
-    const query = document.getElementById('search-input').value.trim();
-    if (query) {
-        alert(`Searching for "${query}"...`);
-        // Implement actual search logic here (e.g., filter products or send a request)
-    } else {
-        alert('Please enter a search query.');
-    }
-}
 
 // Handle GPS functionality
 function getLocation() {
@@ -141,3 +136,32 @@ document.addEventListener('DOMContentLoaded', () => {
         loginUser('example@clothify.com'); // Replace with actual user data
     }
 });
+function performSearch() {
+    const query = document.getElementById("search-input").value.trim();
+    if (query) {
+        // Navigate to a search results page or handle the search logic
+        alert(`You searched for: ${query}`);
+        // Example: Redirect to a search results page
+        window.location.href = `../views/search.html?query=${encodeURIComponent(query)}`;
+    } else {
+        alert("Please enter a search term!");
+    }
+}
+
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(
+//             (position) => {
+//                 alert(
+//                     `Your current location:\nLatitude: ${position.coords.latitude}\nLongitude: ${position.coords.longitude}`
+//                 );
+//             },
+//             (error) => {
+//                 alert("Unable to retrieve your location. Please enable location services.");
+//             }
+//         );
+//     } else {
+//         alert("Geolocation is not supported by your browser.");
+//     }
+// }

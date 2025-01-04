@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page - Clothing Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Clothify</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products, brands, and more">
+            <button>🔍</button>
+        </div>
+        <div class="user-actions">
+            <img src="https://image.freepik.com/free-psd/banner-urban-fashion-template_23-2148652497.jpg" alt="Profile" class="profile-pic" onclick="toggleDropdown()">
+            <div class="dropdown hidden">
+                <ul>
+                    <li><a href="#">My Orders</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Saved Addresses</a></li>
+                    <li><a href="#">Coupons</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-banner">
+        <img src="https://image.freepik.com/free-psd/banner-urban-fashion-template_23-2148652497.jpg" alt="Banner" class="banner-img">
+        <div class="profile-details">
+            <img src="https://image.freepik.com/free-psd/banner-urban-fashion-template_23-2148652497.jpg" alt="User Profile" class="profile-pic-large">
+            <h2>G. Sai Sreekar Reddy</h2>
+            <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <aside>
+            <h4>Profile Options</h4>
+            <ul>
+                <li>My Orders</li>
+                <li>Wishlist</li>
+                <li>Saved Addresses</li>
+                <li>Coupons</li>
+                <li>Help Center</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+        <main>
+            <h2>My Orders</h2>
+            <div class="order">
+                <img src="../images/tshirt.jpg" alt="Product">
+                <div>
+                    <h3>Blue Cotton T-Shirt</h3>
+                    <p>Order #12345</p>
+                    <p>Status: Delivered</p>
+                </div>
+                <button>Track Order</button>
+            </div>
+            <div class="order">
+                <img src="../images/dress.jpg" alt="Product">
+                <div>
+                    <h3>Red Floral Dress</h3>
+                    <p>Order #12346</p>
+                    <p>Status: Out for Delivery</p>
+                </div>
+                <button>Track Order</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="#">Terms & Policies</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+        <p>&copy; 2024 Clothify. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>
