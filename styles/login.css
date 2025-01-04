@@ -230,4 +230,22 @@
     border-radius: 50%;
     object-fit: cover;
   }
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* Leave space for the eye icon */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px; /* Adjust as needed for spacing */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+  }
   

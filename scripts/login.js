@@ -89,9 +89,8 @@ const userAvatar = document.getElementById('user-avatar');
 // Dummy user data
 const dummyUser = {
   name: 'John Doe',
-  email: 'johndoe@example.com',
-  avatar: '../images/default-avatar.png',
-  password: 'saisreekar'
+  email: 'johndoe@gmail.com',
+  avatar: 'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png',
 };
 
 // Handle login
@@ -138,3 +137,18 @@ function init() {
 }
 
 init();
+
+
+document.getElementById("toggle-password").addEventListener("click", function () {
+  const passwordInput = document.getElementById("password");
+  const icon = this;
+
+  // Toggle password visibility
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    icon.textContent = "🙈"; // Change to "eye-off" icon
+  } else {
+    passwordInput.type = "password";
+    icon.textContent = "👁️"; // Change to "eye" icon
+  }
+});
