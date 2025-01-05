@@ -54,7 +54,7 @@ header input {
 }
 
 .banner { 
-    background: url('https://vux.world/wp-content/uploads/AI-in-retail-use-case-article-image.png') no-repeat center center/cover; 
+    background: url('/backgroundimg.png') no-repeat center center/cover; 
     height: 300px;
     display: flex;
     justify-content: center;
@@ -131,6 +131,7 @@ header input {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 0 2rem;
+    padding-left: 6.5rem;
 }
 
 .product-card {
@@ -374,7 +375,7 @@ a {
     border-radius: 10px;
     padding: 5px;
     width: 200%;
-    max-width: 1000px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -445,5 +446,49 @@ a {
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+/* General adjustments for the header layout */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Adjustments for the search bar */
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Actions container adjustments */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icons */
+}
+
+/* Adjust layout for mobile and tablet views */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row; /* Ensures all elements are in a single row */
+    }
+
+    .search-bar {
+        flex: 1; /* Search bar takes available space */
+        margin-right: 10px; /* Adds spacing between search and icons */
+    }
+
+    .actions {
+        flex-shrink: 0; /* Prevents icons from shrinking */
+    }
+
+    .profile-icon img,
+    .location-icon svg {
+        width: 24px; /* Adjust icon size for smaller screens */
+        height: 24px;
     }
 }

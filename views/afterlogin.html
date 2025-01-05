@@ -68,6 +68,61 @@
                 transform: translateY(0);
             }
         }
+
+        /* Product card styles */
+        .product-card {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 150px;
+        }
+
+        .product-card img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .info h4 {
+            font-size: 1rem;
+            margin: 10px 0 5px;
+        }
+
+        .info p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Add animations to product cards */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: float 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +187,7 @@
         </div>
         <div class="category-card">
             <a href="../views/kids.html">
-                <img src="https://c8.alamy.com/comp/R0TARA/group-portrait-of-two-cute-adorable-preschool-children-going-shopping-caucasian-little-girl-and-boy-running-in-mall-kids-holding-shopping-bags-blac-R0TARA.jpg?text=Kids'+Wear" alt="Kids' Wear">
+                <img src="/kids-wear.jpg" alt="Kids' Wear">
                 <div class="category-name">Kids' Wear</div>
             </a>
         </div>
@@ -146,28 +201,28 @@
 
     <section class="products">
         <div class="product-card">
-            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <img src="/jackets.webp" alt="Product" style="height: 200px;">
             <div class="info">
                 <h4>Stylish Jacket</h4>
                 <p class="price">$59.99</p>
             </div>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <img src="/casualt-shirts.jpg" alt="Product" style="height: 200px;">
             <div class="info">
                 <h4>Casual T-Shirt</h4>
                 <p class="price">$19.99</p>
             </div>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/200x300" alt="Product">
+            <img src="/elegentdress.jpg" alt="Product" style="height: 200px;">
             <div class="info">
                 <h4>Elegant Dress</h4>
                 <p class="price">$89.99</p>
             </div>
         </div>
         <div class="product-card">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mens-designer-shoes-1534528103.gif?crop=1.00xw:1.00xh;0,0&resize=1200:*" alt="Product">
+            <img src="/trendysneakers.jpg" alt="Product" style="height: 200px;">
             <div class="info">
                 <h4>Trendy Sneakers</h4>
                 <p class="price">$49.99</p>
