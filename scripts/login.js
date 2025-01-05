@@ -149,6 +149,7 @@ document.getElementById("toggle-password").addEventListener("click", function ()
     icon.textContent = "🙈"; // Change to "eye-off" icon
   } else {
     passwordInput.type = "password";
-    icon.textContent = "👁️"; // Change to "eye" icon
+    icon.textContent = "👁️"; // Change to "eye-on" icon
   }
 });
+

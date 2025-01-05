@@ -98,13 +98,18 @@ httpRequest.send();
 function displayProducts(products) {
     var productContainerStr = '';
     for (var i = 0; i < products.length; i++) {
+        var discount = products[i].discount || 
+        Math.round(((products[i].originalPrice - products[i].currentPrice) / products[i].originalPrice) * 100);
         productContainerStr += `
             <div class="product">
-            <title>${[products[i].id]}</title>
                 <img src="${products[i].image}" alt="${products[i].name}">
                 <h2>${products[i].name}</h2>
                 <p>${products[i].description}</p>
-                <span class="price">$${products[i].price}</span>
+                <div class="pricing">
+                    <span class="original-price">$${products[i].originalPrice.toFixed(2)}</span>
+                    <span class="current-price">$${products[i].currentPrice.toFixed(2)}</span>
+                    <span class="discount">(${discount}% off)</span>
+                </div>
             </div>
         `;
     }
