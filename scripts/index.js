@@ -164,4 +164,57 @@ function performSearch() {
 //     } else {
 //         alert("Geolocation is not supported by your browser.");
 //     }
-// }
+// 
+
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message);
+            window.location.href = "../views/afterlogin.html";
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+document.getElementById("sign-up-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const full_name = document.getElementById("sign-up-name").value;
+    const phone_number = document.getElementById("sign-up-phone").value;
+    const email = document.getElementById("sign-up-email").value;
+    const password = document.getElementById("sign-up-password").value;
+
+    try {
+        const response = await fetch("http://localhost:3000/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ full_name, phone_number, email, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message);
+            window.location.href = "../views/login.html";
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
