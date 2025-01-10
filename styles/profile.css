@@ -190,3 +190,140 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+/* Default styles (Desktop) */
+/* These styles will remain unchanged for large screens. */
+
+/* Mobile View (Android) */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-bar input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .user-actions {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .profile-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic-large {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    aside {
+        display: none; /* Hide sidebar for mobile view */
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .order {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+/* Tablet View (iPad) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 50%;
+    }
+
+    .profile-banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .profile-pic-large {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-content {
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    aside {
+        width: 25%;
+    }
+
+    main {
+        width: 75%;
+    }
+
+    .order {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .order img {
+        width: 80px;
+        height: auto;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
