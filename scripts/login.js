@@ -86,34 +86,31 @@ const userProfile = document.getElementById('user-profile');
 const userNameElement = document.getElementById('user-name');
 const userAvatar = document.getElementById('user-avatar');
 
-// Dummy user data
-const dummyUser = {
-  name: 'John Doe',
-  email: 'johndoe@gmail.com',
-  avatar: 'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001882.png',
-};
-
-// Handle login
-document.getElementById('login-form').addEventListener('submit', function (e) {
+document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
-  
-  // Simulate login
+
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  // Check email and password (you can replace this with actual validation)
-  if (email === dummyUser.email && password === 'password') {
-    // Display user profile in header
-    userNameElement.textContent = dummyUser.name;
-    userAvatar.src = dummyUser.avatar;
-    userProfile.classList.remove('hidden');
+  try {
+      const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+      });
 
-    // Navigate to home page
-    loginPage.style.display = 'none';
-    homePage.style.display = 'block';
-    mainHeader.style.display = 'flex';
-  } else {
-    alert('Invalid email or password.');
+      const data = await response.json();
+
+      if (response.ok) {
+          alert(data.message);
+          // Redirect to dashboard or another page
+          window.location.href = "../views/afterlogin.html";
+      } else {
+          alert(data.message);
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
   }
 });
 

@@ -191,30 +191,73 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         console.error("Error:", error);
     }
 });
-document.getElementById("sign-up-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+// document.getElementById("sign-up-form").addEventListener("submit", async (e) => {
+//     e.preventDefault();
 
-    const full_name = document.getElementById("sign-up-name").value;
-    const phone_number = document.getElementById("sign-up-phone").value;
-    const email = document.getElementById("sign-up-email").value;
-    const password = document.getElementById("sign-up-password").value;
+//     const full_name = document.getElementById("sign-up-name").value;
+//     const phone_number = document.getElementById("sign-up-phone").value;
+//     const email = document.getElementById("sign-up-email").value;
+//     const password = document.getElementById("sign-up-password").value;
 
-    try {
-        const response = await fetch("http://localhost:3000/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ full_name, phone_number, email, password }),
+//     try {
+//         const response = await fetch("http://localhost:3000/signup", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify({ full_name, phone_number, email, password }),
+//         });
+//         document.addEventListener('DOMContentLoaded', function () {
+//             const signupForm = document.getElementById('signup-form');
+//             if (signupForm) {
+//               signupForm.addEventListener('submit', (e) => {
+//                 e.preventDefault();
+//                 const data = await response.json();
+
+//                 if (response.ok) {
+//                     alert(data.message);
+//                     window.location.href = "../views/login.html";
+//                 } else {
+//                     alert(data.message);
+//                 }
+//             } catch (error) {
+//                 console.error("Error:", error);
+//             }
+//               });
+//             }
+//           });
+          
+document.addEventListener('DOMContentLoaded', function () {
+    // Select the form once the DOM is fully loaded
+    const signupForm = document.getElementById("sign-up-form");
+
+    if (signupForm) {
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const full_name = document.getElementById("sign-up-name").value;
+            const phone_number = document.getElementById("sign-up-phone").value;
+            const email = document.getElementById("sign-up-email").value;
+            const password = document.getElementById("sign-up-password").value;
+
+            try {
+                const response = await fetch("http://localhost:3000/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ full_name, phone_number, email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(data.message);
+                    window.location.href = "../views/login.html";  // Redirect to login page
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
         });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert(data.message);
-            window.location.href = "../views/login.html";
-        } else {
-            alert(data.message);
-        }
-    } catch (error) {
-        console.error("Error:", error);
+    } else {
+        console.error('Signup form not found!');
     }
 });
