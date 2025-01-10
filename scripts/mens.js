@@ -104,6 +104,7 @@ function displayProducts(products) {
             <div class="product">
                 <img src="${products[i].image}" alt="${products[i].name}">
                 <h2>${products[i].name}</h2>
+                <p>${product[i].category}</p>
                 <p>${products[i].description}</p>
                 <div class="pricing">
                     <span class="original-price">$${products[i].originalPrice.toFixed(2)}</span>
