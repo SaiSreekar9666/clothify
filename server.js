@@ -29,11 +29,16 @@ db.connect((err) => {
 app.use(bodyParser.json());
 
 // Serve static files from the root directory
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Handle SPA routing (optional, for single-page apps)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 // Serve index.html from the root directory
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist','index.html'));
 });
 
 // Route for signup
