@@ -1,6 +1,6 @@
-function viewCart() {
-    alert('Your cart is empty!');
-}
+// function viewCart() {
+//     alert('Your cart is empty!');
+// }
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -71,7 +71,7 @@ function handleSearch(event) {
 
     if (searchInput) {
         // Redirect to the search results page with the search term as a query parameter
-        window.location.href = `../views/search.html?query=${encodeURIComponent(searchInput)}`;
+        window.location.href = `./views/search.html?query=${encodeURIComponent(searchInput)}`;
     } else {
         alert("Please enter a search term!");
     }
@@ -79,7 +79,8 @@ function handleSearch(event) {
 // Handle dynamic header update
 function updateHeader(user) {
     const actionsContainer = document.getElementById('user-actions');
-    actionsContainer.innerHTML = `
+    if (actionsContainer) {
+        actionsContainer.innerHTML = `
         <div class="user-profile">
             <img src="../images/default-avatar.png" alt="User Avatar" class="user-avatar">
             <span class="user-name">${user.name}</span>
@@ -87,10 +88,11 @@ function updateHeader(user) {
         </div>
         <button onclick="getLocation()">GPS</button>
     `;
+    }
 }
 // Redirect to profile page
 function navigateToProfile() {
-    window.location.href = "../views/profile.html"; // Redirect to profile.html
+    window.location.href = "./views/profile.html"; // Redirect to profile.html
 }
 
 
@@ -105,8 +107,8 @@ function logout() {
     // Clear user profile
     const actionsContainer = document.getElementById('user-actions');
     actionsContainer.innerHTML = `
-        <button onclick="navigateTo('../views/login.html')">Login</button>
-        <button onclick="navigateTo('../views/signup.html')">Signup</button>
+        <button onclick="navigateTo('./views/login.html')">Login</button>
+        <button onclick="navigateTo('./views/signup.html')">Signup</button>
     `;
 }
 
@@ -142,7 +144,7 @@ function performSearch() {
         // Navigate to a search results page or handle the search logic
         alert(`You searched for: ${query}`);
         // Example: Redirect to a search results page
-        window.location.href = `../views/search.html?query=${encodeURIComponent(query)}`;
+        window.location.href = `./views/search.html?query=${encodeURIComponent(query)}`;
     } else {
         alert("Please enter a search term!");
     }
@@ -166,7 +168,7 @@ function performSearch() {
 //     }
 // 
 
-document.getElementById("login-form").addEventListener("submit", async (e) => {
+document.getElementById("login-form")?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const email = document.getElementById("email").value;
@@ -183,7 +185,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
         if (response.ok) {
             alert(data.message);
-            window.location.href = "../views/afterlogin.html";
+            window.location.href = "./views/afterlogin.html";
         } else {
             alert(data.message);
         }
@@ -224,7 +226,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 //               });
 //             }
 //           });
-          
+
 document.addEventListener('DOMContentLoaded', function () {
     // Select the form once the DOM is fully loaded
     const signupForm = document.getElementById("sign-up-form");
@@ -249,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (response.ok) {
                     alert(data.message);
-                    window.location.href = "../views/login.html";  // Redirect to login page
+                    window.location.href = "./views/login.html";  // Redirect to login page
                 } else {
                     alert(data.message);
                 }
@@ -258,6 +260,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     } else {
-        console.error('Signup form not found!');
+        // console.error('Signup form not found!');
     }
 });
