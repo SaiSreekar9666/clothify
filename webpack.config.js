@@ -23,7 +23,7 @@ module.exports = {
   entry: './scripts/index.js', // Your entry file
   output: {
     filename: 'bundle.js', // The output bundle file
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    path: path.resolve(__dirname, 'dist',public), // Output directory
     clean: true, // Cleans the output directory before building
   },
   mode: 'production', // Build mode
