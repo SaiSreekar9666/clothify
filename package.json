@@ -29,12 +29,4 @@
   }
 }
 
-{
-  "builds": [
-    {
-      "src": "src/**/*",
-      "use": "@vercel/node"
-    }
-  ],
-  "outputDirectory": "public" // this points to the folder containing your static assets (e.g., your HTML, CSS, JS)
-}
+
